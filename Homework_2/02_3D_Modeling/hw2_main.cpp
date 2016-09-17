@@ -352,7 +352,7 @@ int main(int argc, const char * argv[])
         
 
         // This moves the model to the right
-        modelMatrix = glm::translate(glm::mat4(1.0f), glm::vec3(0.5f, 0.0f, 0.0f));
+        modelMatrix = glm::translate(glm::mat4(1.0f), glm::vec3(-1.0f, 0.0f, -1.0f));
         glUniformMatrix4fv(modelMatrixLocation, 1, GL_FALSE, &modelMatrix[0][0]); // Send our model matrix to the shader
         
 
@@ -361,7 +361,7 @@ int main(int argc, const char * argv[])
         
 
         // This moves the model to the left
-        modelMatrix = glm::translate(glm::mat4(1.0f), glm::vec3(-3.0f, -0.0f, 0.0f));
+        modelMatrix = glm::translate(glm::mat4(1.0f), glm::vec3(-1.0f, -0.0f, -5.0f));
         glUniformMatrix4fv(modelMatrixLocation, 1, GL_FALSE, &modelMatrix[0][0]); // Send our model matrix to the shader
         
 		// This line renders your Ppolygon model
