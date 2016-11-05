@@ -74,7 +74,7 @@ int main(int argc, const char * argv[])
     
     
     // create an apperance object.
-    GLAppearance* apperance_0 = new GLAppearance("../../data/shaders/multi_texture.vs", "../../data/shaders/multi_texture.fs");
+    GLAppearance* apperance_0 = new GLAppearance("../shaders/multi_texture.vs", "../shaders/multi_texture.fs");
     
     GLDirectLightSource  light_source;
     light_source._lightPos = glm::vec4(00.0,20.0,20.0, 0.0);
@@ -113,8 +113,8 @@ int main(int argc, const char * argv[])
     //************************************************************************************************
     // Add a texture
     GLMultiTexture* texture = new GLMultiTexture();
-    int texid = texture->loadAndCreateTextures("../../data/textures/texture_brick.bmp", "../../data/textures/light_512_512a.bmp");
-    //int texid = texture->loadAndCreateTexture("../../data/textures/texture_earth_128x128_a.bmp");
+    int texid = texture->loadAndCreateTextures("../textures/landscape.bmp", "../textures/1gradient.bmp");
+    //texid = texture->loadAndCreateTexture("../../data/textures/texture_earth_128x128_a.bmp");
     apperance_0->setTexture(texture);
     
     //************************************************************************************************
@@ -155,8 +155,8 @@ int main(int argc, const char * argv[])
     
     // Enable blending
     glEnable(GL_BLEND);
-    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-    
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_DST_ALPHA);
+	glBlendFunc(GL_SRC_COLOR, GL_DST_COLOR);
     // sphere->enableNormalVectorRenderer();
     
     

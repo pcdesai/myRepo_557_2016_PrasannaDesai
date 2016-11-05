@@ -10,11 +10,11 @@ cmake_minimum_required(VERSION 2.6)
 project(HCI557_Multi_Texture)
 
 
-set(CFILE_PATH  "${CMAKE_SOURCE_DIR}/../../SDK/cmake/")
-set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/" ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/../../SDK/cmake/")
+set(CFILE_PATH  "${CMAKE_SOURCE_DIR}/../SDK/cmake/")
+set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/" ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/../SDK/cmake/")
 
 message(STATUS "Source directory ${CMAKE_SOURCE_DIR}")
-message(STATUS "SDK directory ${CMAKE_SOURCE_DIR}/../../SDK")
+message(STATUS "SDK directory ${CMAKE_SOURCE_DIR}/../SDK")
 
 
 # Find packages
@@ -77,9 +77,9 @@ add_executable(HCI557_Multi_Texture ${HCI557_Multi_Texture_SRC})
 # Add link directories
 # Note required for this project
 IF(WIN32)
-	link_directories(${CMAKE_SOURCE_DIR}/../../SDK/lib)
+	link_directories(${CMAKE_SOURCE_DIR}/../SDK/lib)
 ELSE(WIN32)
-	link_directories(${CMAKE_SOURCE_DIR}/../../SDK/lib)
+	link_directories(${CMAKE_SOURCE_DIR}/../SDK/lib)
 	link_directories(/usr/local/lib)
 	link_directories(/usr/local/Cellar/glfw3/3.0.4/lib)
 	link_directories(/usr/local/Cellar/glew/1.11.0/lib)
